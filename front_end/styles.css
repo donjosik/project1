@@ -1,15 +1,32 @@
 .background {
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background: linear-gradient(to right, #133f56, #26cfc4);
     background-size : cover;
     height: 100vh;
 }
 
 .login-container {
-    background-color: violet;
-    width: 300px;
-    border-color: violet;
+    background-color: rgb(158, 227, 236);
+    width: 40%;
+    height: 400px;
+    border-color: rgb(158, 227, 236);
     border-width: 5px;
     border-radius: 10px;
     border-style: solid;
-    padding : 20px;
+    padding : 25px;
+    margin: auto;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.login-button {
+    width: 24%;
+    height: 45px;
+    background-color: darkgreen;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
 }

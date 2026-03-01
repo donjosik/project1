@@ -1,30 +1,35 @@
 let username = document.getElementById("username");
 let password = document.getElementById("password");
-let loginBtn = document.getElementById("loginBtn");
-let usernameErr = document.getElementById("usernameErr");
-let passwordErr = document.getElementById("passwordErr");
+let loginForm = document.getElementById("loginForm");
 
-loginBtn.addEventListener("click", (event) => {
-    event.preventDefault();
-});
-
-username.addEventListener("blur", function(event) {
-    if (event.target.value === "") {
+function validateUsername() {
+    if (username.value === "") {
         username.classList.add("is-invalid");
-        usernameErr.textContent = "Username cannot be empty";
-        usernameErr.style.color = "red";
+        return false;
     } else {
         username.classList.remove("is-invalid");
-        usernameErr.textContent = "";
+        return true;
     }
-});
-password.addEventListener("blur", function(event) {
-    if (event.target.value === "") {
-        password.style.borderColor = "red";
-        passwordErr.textContent = "Password cannot be empty";
-        passwordErr.style.color = "red";
+}
+
+function validatePassword() {
+    if (password.value === "") {
+        password.classList.add("is-invalid");
+        return false;
     } else {
-        password.style.borderColor = "green";
-        passwordErr.textContent = "";
+        password.classList.remove("is-invalid");
+        return true;
+    }
+}
+
+loginForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    let isUserValid = validateUsername();
+    let isPassValid = validatePassword();
+    if (isUserValid && isPassValid) {
+        alert("Login successful!");
     }
 });
+
+username.addEventListener("blur", validateUsername);
+password.addEventListener("blur", validatePassword);
