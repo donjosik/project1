@@ -42,3 +42,13 @@ label {
     padding : 25px;
     margin: auto;
 }
+
+.register-button {
+    width: 24%;
+    height: 45px;
+    background-color: darkgreen;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
